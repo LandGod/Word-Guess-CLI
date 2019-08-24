@@ -55,7 +55,7 @@ class Word {
     printWord() {
         let output = [];
         for (let i = 0; i < this.word.length; i++) {
-            output.push(this.word[i].display())
+            output.push(this.word[i].toString())
         }
         return output.join(' ');
     }
