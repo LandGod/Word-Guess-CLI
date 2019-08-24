@@ -52,7 +52,7 @@ class Word {
         }
     }
 
-    printWord() {
+    toString() {
         let output = [];
         for (let i = 0; i < this.word.length; i++) {
             output.push(this.word[i].toString())
@@ -63,5 +63,5 @@ class Word {
 }
 
 module.exports = {
-    Word = Word
+    Word : Word
 };
