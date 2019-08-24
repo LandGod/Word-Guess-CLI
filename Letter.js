@@ -7,7 +7,7 @@ class Letter {
         this.wasGuessed = false;
     }
 
-    display() {
+    toString() {
         if (this.wasGuessed) {
             return this.value;
         } else {
