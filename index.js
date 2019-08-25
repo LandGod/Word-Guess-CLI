@@ -1,5 +1,6 @@
 const Word = require("./Word.js").Word;
 const inquirer = require('inquirer');
+const chalk = require('chalk');
 
 const wordBank = ['illuminate', 'cloud', 'hang', 'expression', 'jaundice', 'courtesan', 'flower', 'traipse', 'wanton'];
 
@@ -29,20 +30,20 @@ function playGame() {
                         userInput = userInput.trim();
                         if (userInput.length === 1 || userInput.length === currentWord.answer.length) {
                             if (guessBank.includes(userInput)) {
-                                return 'You already guessed that letter.'
+                                return chalk`{red You already guessed that letter.}`
                             }
                             return true;
                         }
-                        return 'Your guess must be only a single letter (or an entire word of the same length as the answer).';
+                        return chalk`{red Your guess must be only a single letter (or an entire word of the same length as the answer).}`;
                     }
                 }
             ])
             .then(answers => {
                 guessBank.push(answers.userGuess)
                 if (currentWord.guess(answers.userGuess)) {
-                    console.log('Correct!')
+                    console.log(chalk`{greenBright Correct!}`)
                 } else {
-                    console.log('Sorry, guess again.')
+                    console.log(chalk`{red Sorry, guess again.}`)
                     lives--;
                 }
 
@@ -52,18 +53,18 @@ function playGame() {
 
                 if (solved || !lives) {
                     if (solved) {
-                        console.log('\nYou Win!!')
+                        console.log(chalk`\n{greenBright You Win!!}`)
                         wins++;
 
                     } else {
-                        console.log("\nSorry, you're out of lives. Game over!");
-                        console.log(`The word was ${currentWord.answer}`)
+                        console.log(chalk`\n{red Sorry, you're out of lives. Game over!}`);
+                        console.log(chalk`The word was {magenta ${currentWord.answer}}`)
                         losses++;
                     }
 
                     // Reset global progress trackers
                     lives = 5;
-                    console.log(`Current record: ${wins} wins and ${losses} losses.\n`)
+                    console.log(chalk`Current record: {green ${wins}} wins and {red ${losses}} losses.\n`)
 
                     inquirer
                         .prompt([
