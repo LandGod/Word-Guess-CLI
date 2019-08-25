@@ -60,6 +60,17 @@ class Word {
         return output.join(' ');
     }
 
+    isSolved() {
+        for (let i = 0; i < this.word.length; i++) {
+            if (this.word[i].wasGuessed === false) {
+                return false;
+            }
+        }
+
+        return true;
+        
+    }
+
 }
 
 module.exports = {
