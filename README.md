@@ -30,4 +30,4 @@ Any guess of more (or less) than 1 letter which does not have the same number of
 
 ## Demo
 
-![demo1](https://github.com/LandGod/word-guess-cli/demos/demo1.gif?raw=true)
+![demo1](https://github.com/LandGod/Word-Guess-CLI/blob/master/demos/demo1.gif?raw=true)
