@@ -25,3 +25,9 @@ After winning or losing a game, you will be told what the correct answer was and
 Finally, if at any time you wish to guess the entire word, instead of just a single letter, you may. However, if you are incorrect it will count against your number of attempts, and an incorrect guess will not reveal any new letters, even if some of the letters in the word you guessed were correct. 
 
 Any guess of more (or less) than 1 letter which does not have the same number of letters as the answer will simply be rejected as invalid input and will not be counted against your number of attempts. 
+
+
+
+## Demo
+
+![demo1](https://github.com/LandGod/word-guess-cli/demos/demo1.gif?raw=true)
